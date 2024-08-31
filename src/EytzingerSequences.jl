@@ -4,4 +4,10 @@ export Eytzinger,
        search_eytzinger,
        predecessors, successors
 
-end
+include("suport.jl")    # type-preserving versions of trailing_zeros (cttz), findfirstset (ffs)
+include("type.jl")      # struct Eytzinger, low-level struct support
+include("maps.jl")      # eytzinger(n) ↦ Eytzinger sequence
+                        # 
+
+
+
