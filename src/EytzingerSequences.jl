@@ -9,5 +9,5 @@ include("type.jl")      # struct Eytzinger, low-level struct support
 include("maps.jl")      # eytzinger(n) ↦ Eytzinger sequence
                         # 
 
-
+const TupOrVec = Union{NTuple{N,T}, Vector{T}} where {N,T}
 
