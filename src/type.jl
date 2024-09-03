@@ -1,8 +1,13 @@
-struct Eytzinger{T}
+struct Eytzinger{T<:AbstractVector}
     seq::T
 end
 
 seq(x::Eytzinger) = x.seq
+
+function Eytzinger(n::Integer)
+    seq = map(typeof(n), eytzinger(n))
+    Eytzinger(seq)
+end
 
 Base.length(x::Eytzinger{T}) where {T} = length(seq(x))
 Base.isempty(x::Eytzinger) = isempty(seq(x))

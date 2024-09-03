@@ -19,14 +19,30 @@ search for 𝒙 in 𝒙𝒔
 
 """ search_eytzinger
 
-
 function search_eytzinger(𝒙𝒔::Eytzinger, 𝒙)
     n = length(𝒙𝒔)
     k = 1
     while (k <= n)
         k = (k << 1) | (𝒙𝒔[k] < 𝒙)
     end
-    k >>> ffs(~k)
+    k >>> typesafe_ffs(~k)
+end
+
+function search_eytzinger(𝒙𝒔::AbstractVector{T}, 𝒙::T) where {T}
+    n = length(𝒙𝒔)
+    k = 1
+    while (k <= n)
+        k = (k << 1) | (𝒙𝒔[k] < 𝒙)
+    end
+    k >>> typesafe_ffs(~k)
+end
+
+function search_eytzinger(𝒙𝒔::NTuple{N,T}, 𝒙::T) where {N,T}
+    k = 1
+    while (k <= N)
+        k = (k << 1) | (𝒙𝒔[k] < 𝒙)
+    end
+    k >>> typesafe_ffs(~k)
 end
 
 """
@@ -41,7 +57,6 @@ function eytzinger(n)
     eytzinger_order(in, out, 0, 1)
     out
 end
-
 
 """
     eytzinger_order
