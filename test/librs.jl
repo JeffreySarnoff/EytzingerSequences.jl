@@ -76,7 +76,7 @@ impl Eytzinger {
 /// Generates an `Vec<u32>` of a given size with aproximately 0.5 coverage
 ///
 /// First element will always be `1` and the last one is `max`. Coverage is the proportion
-/// of elements in the range `1..max` which are present in resulting vector.
+/// of elements in the range `1..max` which are present in resulting DenseVector.
 /// The idea behind this algorithm is the following. If you will generate random number between
 /// `1..result.last()` the probability of `result` contains this number is 0.5.
 pub fn generate_data(size: usize) -> Vec<u32> {
@@ -247,9 +247,9 @@ fn criterion_benchmark(c: &mut Criterion) {
 criterion_group!(benches, criterion_benchmark);
 criterion_main!(benches);
 =#
-const Vec = Vector{T} where {T}
+const Vec = DenseVector{T} where {T}
 const Tup = Tuple{Vararg{T,N}} where {T,N}
-const VecOrTup = Union{Vector{T}, Tuple{Vararg{T,N}}} where {T,N}
+const VecOrTup = Union{DenseVector{T}, Tuple{Vararg{T,N}}} where {T,N}
 
 function move_element(a::VecOrTup, b::Vec, i, k) where {T,N}
     if k <= length(a)

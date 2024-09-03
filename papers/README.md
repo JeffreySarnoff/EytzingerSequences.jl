@@ -24,10 +24,10 @@ Efficiently Searching In-Memory Sorted Arrays
 Peter Van Sandt, Yannis Chronis, Jignesh M. Patel
 https://pages.cs.wisc.edu/~chronis/files/efficiently_searching_sorted_arrays.pdf
 
-A Fast and Vectorizable Alternative to Binary Search in Arrays of Floating Point Numbers
+A Fast and DenseVectorizable Alternative to Binary Search in Arrays of Floating Point Numbers
 Fabio Cannizzo
 https://arxiv.org/pdf/1506.08620
-Algorithm 3 LeadBit Binary Search (Vectorizable, potentially branchless)
+Algorithm 3 LeadBit Binary Search (DenseVectorizable, potentially branchless)
 Algorithm 6 (uses Eytzinger layout) (pg 10)
 
 Beyond Binary Search: Parallel In-place Construction of Implicit Search Tree Layouts
