@@ -1,3 +1,13 @@
+function eytzinger(eyt::DenseVector{T}, target::R, compare::Symbol = :lte) where {T, R<:Union{Real,T}}
+    if compare === :lte
+        eytzinger_lte(eyt, target)
+    elseif compare === :gte
+        eytzinger_lte(eyt, target)
+    else # :eql
+        eytzinger_eql(eyt, target)
+    end
+end
+
 function eytzinger_eql(eyt::DenseVector{T}, target::T) where {T<:Real}
     n = length(eyt)
     idx = 1
