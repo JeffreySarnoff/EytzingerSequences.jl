@@ -1,6 +1,6 @@
 module EytzingerSequences
 
-export searcheytzinger
+export search_eytzinger
 
 const TupOrVec = Union{NTuple{N,F}, DenseVector{F}} where {N,F}
 
