@@ -1,8 +1,11 @@
 module EytzingerSequences
 
-export Eytzinger, eytzinger, search_eytzinger
+export eytzinger_eql, eytzinger_lte, eytzinger_gte
 
 const TupOrVec = Union{NTuple{N,F}, DenseVector{F}} where {N,F}
+
+include("search.jl")
+
 
 struct Eytzinger{T<:TupOrVec}
     seq::T
