@@ -1,4 +1,4 @@
-function eytzinger(eyt::DenseVector{T}, target::R, compare::Symbol = :lte) where {T, R<:Union{Real,T}}
+function searcheytzinger(eyt::DenseVector{T}, target::R, compare::Symbol = :lte) where {T, R<:Union{Real,T}}
     if compare === :lte
         eytzinger_lte(eyt, target)
     elseif compare === :gte
